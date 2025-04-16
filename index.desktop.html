@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G+G</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+
+    .petal {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+      z-index: 9999;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100vh;
+        overflow-x: hidden;
+        background-color: #000429;
+        font-family: sans-serif;
+        overflow: hidden;
+        height: 100%;
+        color: aliceblue;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        padding: 100px;
+        color: white;
+    }
+
+    #blobs-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 150vh;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .blob {
+        position: absolute;
+        border-radius: 50%;
+        background-color: #ac04fa;
+        filter: blur(60px);
+        opacity: 0.3;
+    }
+
+    #blob1 { width: 200px; height: 200px; left: 10%; animation: floatUp 19s linear infinite; }
+    #blob2 { width: 180px; height: 180px; left: 35%; animation: floatDown 30s linear infinite; }
+    #blob3 { width: 220px; height: 220px; left: 70%; animation: floatUp 20s linear infinite; }
+    #blob4 { width: 160px; height: 160px; left: 20%; animation: floatDown 29s linear infinite; }
+    #blob5 { width: 180px; height: 180px; left: 50%; animation: floatUp 17s linear infinite; }
+    #blob6 { width: 200px; height: 200px; left: 80%; animation: floatDown 22s linear infinite; }
+
+    @keyframes floatUp {
+        0% { top: 100vh; opacity: 0; }
+        10%, 90% { opacity: 0.4; }
+        100% { top: -250px; opacity: 0; }
+    }
+
+    @keyframes floatDown {
+        0% { top: -250px; opacity: 0; }
+        10%, 90% { opacity: 0.4; }
+        100% { top: 100vh; opacity: 0; }
+    }
+   
+iframe {
+    position: absolute;
+    top: 70px;
+    left: 70px;
+}
+#praia {
+    position: absolute;
+    height: 50%;
+    width: auto;
+    left: 1070px;
+    top: 250px;
+    border-radius: 60px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+#formatura {
+    position: absolute;
+    height: 50%;
+    width: auto;
+    left: 950px;
+    top: 100px;
+    border-radius: 60px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+#lua {
+    position: absolute;
+    top: 488px;
+    left: 970px;
+    height: 70px;
+    width: auto;
+    filter: brightness(60%);
+}
+#rosaazul {
+    position: absolute;
+    top: 155px;
+    left: 1240px;
+    height: 60px;
+    width: auto;
+    filter: brightness(60%);
+}
+#cronometro {
+    position: absolute;
+      font-size: 8em;
+      font-family: 'Great Vibes', cursive;
+      color: aliceblue;
+      left: 520px;
+      top: 290px
+
+    }
+#mapsbotao {
+    position: absolute;
+    top: 480px;
+    left: 40px;
+}
+#mapsfoto {
+  height: 200px;               /* 300px - 5px cima - 5px baixo */
+  width: 400px;
+  border-radius: 16px;
+  object-fit: cover;           /* Mantém proporção e corta o que sobrar */
+  object-position: center;     /* Centraliza o corte vertical */
+  display: block;              /* Garante que o comportamento fique certinho */
+}
+#textos {
+    font-family: 'Great Vibes', cursive;
+    position: absolute;
+    left: 335px;
+    top: 150px;
+    font-size: 18px;
+}
+h1 {
+    position: absolute;
+    left: 40px;
+}
+p1 {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    font-size: 30px;
+}
+p2 {
+    position: absolute;
+    top: 230px;
+    left: 450px;
+    font-size: 30px;
+}
+    </style>
+</head>
+<body>
+    <div id="blobs-wrapper">
+        <div class="blob" id="blob1"></div>
+        <div class="blob" id="blob2"></div>
+        <div class="blob" id="blob3"></div>
+        <div class="blob" id="blob4"></div>
+        <div class="blob" id="blob5"></div>
+        <div class="blob" id="blob6"></div>
+    </div>
+    <div id="balao">
+        <div id="cronometro">Carregando...</div>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1bguAEOqZ6UU6Cnljrgn0t?utm_source=generator"
+         width="15%" height="2000"
+          frameBorder="0" allowfullscreen=""
+           allow="autoplay; clipboard-write; 
+           encrypted-media; fullscreen; 
+           picture-in-picture" loading="lazy">
+        </iframe>
+        <img id="formatura"src="public/formatura.jpg"></img>
+        <img id="praia" src="public/praia.jpg"></img>
+        <img id="lua" src="public/lua.png"></img>
+        <img id="rosaazul" src="public/Blue-Rose-Transparent-Background-PNG.png"></img>
+        <a id="mapsbotao"  href="https://maps.app.goo.gl/HZZVKGgsQjcoFp6YA" target="_blank">
+            <img id="mapsfoto"   src="public/maps.png" alt="Mapa da Igreja" style="max-width: 100%;">
+          </a>
+    </div>
+    <div id="textos">
+        <h3>"Portanto, o que Deus uniu, ninguém separe" Mateus 19:6........</h2>
+        <H1>gabriely  +  guilherme</H1>
+        <p1>since: 11.out.24 <br> ou mais precisamente... a partir de:</p1>
+        <p2>horas atras...</p2>
+
+    </div>
+</body>
+<script>
+    const petalImg = 'public/sua-petala.png'; // substitua com o caminho da sua imagem
+    const petalCount = 30;
+
+    for (let i = 0; i < petalCount; i++) {
+      const petal = document.createElement('img');
+      petal.src = petalImg;
+      petal.classList.add('petal');
+
+      // tamanho aleatório
+      const size = Math.random() * 20 + 10;
+      petal.style.width = `${size}px`;
+      petal.style.height = 'auto';
+
+      // posição inicial aleatória
+      petal.style.left = `${Math.random() * 100}vw`;
+      petal.style.top = `-${Math.random() * 100}px`;
+
+      // duração e atraso aleatórios pra parecer natural
+      const duration = Math.random() * 10 + 5;
+      const delay = Math.random() * 5;
+      petal.style.animationDuration = `${duration}s`;
+      petal.style.animationDelay = `${delay}s`;
+
+      // vento (deslocamento lateral)
+      const wind = (Math.random() - 0.5) * 100; // de -50px a +50px
+      petal.animate([
+        { transform: `translate(0, 0)` },
+        { transform: `translate(${wind}px, 100vh) rotate(${Math.random() * 360}deg)` }
+      ], {
+        duration: duration * 1000,
+        delay: delay * 1000,
+        iterations: Infinity
+      });
+
+      document.body.appendChild(petal);
+    }
+    const inicio = new Date("2024-10-11T20:30:00");
+
+    function atualizarCronometro() {
+      const agora = new Date();
+      let diff = Math.floor((agora - inicio) / 1000); // em segundos
+
+      const horas = Math.floor(diff / 3600);
+      diff %= 3600;
+      const minutos = Math.floor(diff / 60);
+      const segundos = diff % 60;
+
+      // Formata com dois dígitos
+      const h = String(horas).padStart(2, '0');
+      const m = String(minutos).padStart(2, '0');
+      const s = String(segundos).padStart(2, '0');
+
+      document.getElementById("cronometro").innerText = `${h}:${m}:${s}`;
+    }
+
+    atualizarCronometro();
+    setInterval(atualizarCronometro, 1000);
+  </script>
+</html>
